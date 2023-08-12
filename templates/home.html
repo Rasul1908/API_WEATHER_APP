@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webpagefortest</title>
+</head>
+<body>
+    <nav>
+        <a href="/home/">Home</a>
+        <a href="/Contact_us/">Contact Us</a>
+        <a href="/about/">About</a>
+    </nav>
+    <h1>This is website demonstrating exact date temperatures</h1>
+    <h2>Please indicate station(city) and exact date in the below URL format</h2>
+    <br>
+    <br>
+    <h3> FORMAT: "http://127.0.0.1:3001/api/v1/station/date/"<h3>
+    <h3>EXAMPLE: "http://127.0.0.1:3001/api/v1/2/1999-01-25/"</h3>
+        <br>
+        <br>
+        <p> {{data|safe}} </p>
+    <img src= "{{url_for ('static', filename='map.jpg')}}" style="width:300px">
+    <br>
+    <a href="https://google.com">Google</a>
+</body>
+</html>
