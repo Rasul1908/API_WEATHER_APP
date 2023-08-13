@@ -11,15 +11,18 @@
         <a href="/about/">About</a>
     </nav>
     <h1>This is website demonstrating exact date temperatures</h1>
-    <h2>Please indicate station(city) and exact date in the below URL format</h2>
+    <h2>Please indicate station and exact date or year (both optional)  in the below URL format</h2>
     <br>
     <br>
-    <h3> FORMAT: "http://127.0.0.1:3001/api/v1/station/date/"<h3>
-    <h3>EXAMPLE: "http://127.0.0.1:3001/api/v1/2/1999-01-25/"</h3>
+        <img src= "{{url_for ('static', filename='map.jpg')}}" style="width:600px">
+
+    <h3> URL FORMAT: "http://127.0.0.1:3001/api/v1/station/date/"<h3>
+    <h3> URL EXAMPLE: "http://127.0.0.1:3001/api/v1/2/1999-01-25/"</h3>
+            <h3> URL EXAMPLE 2: "http://127.0.0.1:3001/api/v1/10/"</h3>
+        <h3>URL EXAMPLE 3 "http://127.0.0.1:3001/api/v1/yearly/10/1999/</h3>
         <br>
         <br>
         <p> {{data|safe}} </p>
-    <img src= "{{url_for ('static', filename='map.jpg')}}" style="width:300px">
     <br>
     <a href="https://google.com">Google</a>
 </body>

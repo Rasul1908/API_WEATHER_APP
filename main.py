@@ -24,6 +24,25 @@ def api(station,date):
     result_dictionary={"station": station, "date":date,"temperature":temperature}
     return result_dictionary
 
+@app.route('/api/v1/<station2>/')
+def api2(station2):
+    filename="data_small/TG_STAID" + str(station2).zfill(6) +".txt"
+    df=pd.read_csv(filename,skiprows=20,parse_dates =["    DATE"])
+
+    result_dictionary2=df.to_dict(orient='records')
+    return result_dictionary2
+
+
+@app.route('/api/v1/yearly/<station3>/<year>/')
+def api3(station3,year):
+    filename="data_small/TG_STAID" + str(station3).zfill(6) +".txt"
+    df=pd.read_csv(filename,skiprows=20)
+    df["    DATE"]=df["    DATE"].astype(str)
+    df=df[df["    DATE"].str.startswith(str(year))]
+
+    result_dictionary2=df.to_dict(orient='records')
+    return result_dictionary2
+
 app.run(debug=True,port=3001)
 
 
